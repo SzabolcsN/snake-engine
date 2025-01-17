@@ -23,6 +23,7 @@
 .cell {
   width: 20px;
   height: 20px;
+  border-radius: 1px;
 }
 
 .cell.empty {
@@ -35,4 +36,25 @@
 
 .cell.pickup {
   background-color: red;
+}
+
+.score {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.game-over {
+  font-size: 24px;
+  color: red;
+  text-align: center;
+}
+
+.restart-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
