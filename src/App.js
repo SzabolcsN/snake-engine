@@ -71,15 +71,17 @@ function App() {
       const newSnake = [newHead, ...prevSnake];
 
       if (newHead.x === pickup.x && newHead.y === pickup.y) {
-        setScore((prevScore) => prevScore + 1);
         setPickup(generatePickup(newSnake));
-      } else {
-        newSnake.pop();
+        if (score < newSnake.length - 1) {
+          setScore(newSnake.length - 1);
+        }
+        return newSnake;
       }
 
+      newSnake.pop();
       return newSnake;
     });
-  }, [pendingDirection, direction, pickup]);
+  }, [pendingDirection, direction, pickup, score]);
 
   useEffect(() => {
     const handleKeyDown = (event) => {
